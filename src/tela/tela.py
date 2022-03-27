@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'inicio.ui'
+# Form implementation generated from reading ui file '.\inicio.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(437, 422)
         MainWindow.setMaximumSize(QtCore.QSize(437, 422))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("src/imagens/1200px-Cisco_logo_blue_2016.svg.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(".\\imagens/1200px-Cisco_logo_blue_2016.svg.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -54,17 +54,16 @@ class Ui_MainWindow(object):
         self.btLimpar = QtWidgets.QPushButton(self.centralwidget)
         self.btLimpar.setGeometry(QtCore.QRect(350, 380, 75, 23))
         self.btLimpar.setObjectName("btLimpar")
-        self.label_6 = QtWidgets.QLabel(self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(10, 350, 47, 16))
-        self.label_6.setObjectName("label_6")
-        self.label_8 = QtWidgets.QLabel(self.centralwidget)
-        self.label_8.setGeometry(QtCore.QRect(170, 350, 63, 16))
-        self.label_8.setObjectName("label_8")
         self.varRamal = QtWidgets.QLineEdit(self.centralwidget)
         self.varRamal.setGeometry(QtCore.QRect(50, 350, 101, 20))
+        self.varRamal.setInputMethodHints(QtCore.Qt.ImhPreferNumbers)
+        self.varRamal.setMaxLength(50)
+        self.varRamal.setEchoMode(QtWidgets.QLineEdit.Normal)
         self.varRamal.setObjectName("varRamal")
         self.varSenha = QtWidgets.QLineEdit(self.centralwidget)
         self.varSenha.setGeometry(QtCore.QRect(210, 350, 101, 20))
+        self.varSenha.setMaxLength(50)
+        self.varSenha.setEchoMode(QtWidgets.QLineEdit.Password)
         self.varSenha.setObjectName("varSenha")
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -79,5 +78,5 @@ class Ui_MainWindow(object):
         self.btAlterar.setText(_translate("MainWindow", "Alterar"))
         self.btSalvar.setText(_translate("MainWindow", "Salvar arquivo"))
         self.btLimpar.setText(_translate("MainWindow", "Limpar"))
-        self.label_6.setText(_translate("MainWindow", "Ramal:"))
-        self.label_8.setText(_translate("MainWindow", "Senha:"))
+        self.varRamal.setPlaceholderText(_translate("MainWindow", "ramal"))
+        self.varSenha.setPlaceholderText(_translate("MainWindow", "senha"))

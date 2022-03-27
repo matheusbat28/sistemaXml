@@ -20,11 +20,11 @@ class TratadoXml(QMainWindow, Ui_MainWindow):
 
     # função para abrir o arquivo e converter o conteudo para string
     def abrirArquivo(self):
-        arquivo = QFileDialog.getOpenFileName()[0] # receber a url do arquivo selecionado
+        arquivo = QFileDialog.getOpenFileName(filter='xml(*.xml)')[0] # receber a url do arquivo selecionado
         self.urlArquivo = arquivo
 
         try:
-            with open(arquivo, 'r',encoding= 'UTF-8') as xml: # abre o arquivo
+            with open(arquivo, 'r', encoding= 'UTF-8') as xml: # abre o arquivo
                 strXml = str(xml.read()) # converte o arquivo para string
                 self.lbArquivo.setText(strXml)
                 self.varArquivo.setText(arquivo)
@@ -75,7 +75,7 @@ class TratadoXml(QMainWindow, Ui_MainWindow):
 
             if arquivo == self.urlArquivo: # salva o arquivo caso o novo caminho seja igual o antigo 
                 try: 
-                    with open(arquivo, 'w') as xml:
+                    with open(arquivo, 'w', encoding= 'UTF-8') as xml:
                         xml.write(self.dados)
                         self.varArquivo.clear()
                         self.lbArquivo.clear()
@@ -92,7 +92,7 @@ class TratadoXml(QMainWindow, Ui_MainWindow):
 
             else: # salva o arquivo caso o novo caminho seja diferente o antigo
                 try: 
-                    with open(arquivo + '.xml', 'w') as xml:
+                    with open(arquivo + '.xml', 'w', encoding= 'UTF-8') as xml:
                             xml.write(self.dados)
                             self.varArquivo.clear()
                             self.lbArquivo.clear()
